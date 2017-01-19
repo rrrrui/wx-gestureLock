@@ -1,0 +1,12 @@
+
+<!--index.wxml-->
+<view class="container">
+<view class="header">
+  <button bindtap="setPwd" hover-class="buttonHover">设置密码</button>
+  <button bindtap="resetPwd" hover-class="buttonHover">重新设置</button>
+  <button bindtap="checkPwd" hover-class="buttonHover">验证密码</button>
+  <button bindtap="remind" hover-class="buttonHover">提示密码</button>
+</view>
+<view class="tips">{{tips}}</view>
+  <canvas canvas-id="lock" class="gesture-lock" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" style="width:300px;height:300px;"></canvas>
+</view>
