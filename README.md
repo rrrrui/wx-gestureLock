@@ -1,4 +1,4 @@
-# wx-slideLock
+# wx-gestureLock
 微信小程序手势解锁<br>
 一个简单的demo  <br>
 <br><br>
