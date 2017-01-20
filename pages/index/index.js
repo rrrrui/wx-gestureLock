@@ -29,10 +29,16 @@ Page({
 		});
 	},
 	checkPwd: function () {
-		this.lock.state = "login";
-		this.setData({
-			tips: "请输入密码"
-		});
+		if (wx.getStorageSync('cachePwd')) {
+			this.lock.state = "login";
+			this.setData({
+				tips: "请输入密码"
+			});
+		} else {
+			this.setData({
+				tips: "请先设置密码"
+			})
+		}
 	},
 	remind: function () {
 		if (wx.getStorageSync('cachePwd')) {

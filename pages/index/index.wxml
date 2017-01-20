@@ -8,5 +8,5 @@
   <button bindtap="remind" hover-class="buttonHover">提示密码</button>
 </view>
 <view class="tips">{{tips}}</view>
-  <canvas canvas-id="lock" class="gesture-lock" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" style="width:300px;height:300px;"></canvas>
+  <canvas canvas-id="lock" class="gesture-lock" disable-scroll="true" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" style="width:300px;height:300px;"></canvas>
 </view>

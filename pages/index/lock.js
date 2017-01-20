@@ -89,7 +89,7 @@
 		this.context.closePath();
 	}
 	Lock.prototype.resetDraw = function () {
-		this.context.clearRect(0, 0, 300, 300)
+		//this.context.clearRect(0, 0, 300, 300)
 		this.createCircle(this.opt.outCircle.radius);//9个大圆
 		for (let i = 0; i < this.crossCircleList.length; i++) {
 			var index = this.circleList[this.crossCircleList[i]];
@@ -118,16 +118,15 @@
 		if (event.touches.length == 1) {
 			var self = this;
 			if (self.touchFlag) {
-				self.crossCircleIndex(event.touches[0])
+				self.crossCircleIndex(event.touches[0])//录入点坐标
 				var start = self.circleList[self.crossCircleList[0]];
 				self.resetDraw(event)
 				self.drawConLine(start, event.touches[0]);//画移动的线
+				wx.drawCanvas({
+					canvasId: self.canvasId,
+					actions: self.context.getActions()
+				});
 			}
-			wx.drawCanvas({
-				canvasId: self.canvasId,
-				actions: self.context.getActions(),
-				reserve: true
-			});
 		}
 	}
 	Lock.prototype.bindEnd = function () {
@@ -157,13 +156,12 @@
 		self.drawConLine(start, end);//画线
 		wx.drawCanvas({
 			canvasId: self.canvasId,
-			actions: self.context.getActions(),
-			reserve: true
+			actions: self.context.getActions()
 		});
 	}
 	Lock.prototype.clear = function () {
 		var self = this;
-		self.context.clearRect(0, 0, 300, 300)
+		//self.context.clearRect(0, 0, 300, 300)
 		self.circleList = [];
 		self.crossCircleList = [];
 		self.result = true;
@@ -171,8 +169,7 @@
 		self.createCircle(self.opt.outCircle.radius);
 		wx.drawCanvas({
 			canvasId: self.canvasId,
-			actions: self.context.getActions(),
-			reserve: true
+			actions: self.context.getActions()
 		});
 	}
 	Lock.prototype.doState = function (state) {
