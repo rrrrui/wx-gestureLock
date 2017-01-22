@@ -89,7 +89,6 @@
 		this.context.closePath();
 	}
 	Lock.prototype.resetDraw = function () {
-		//this.context.clearRect(0, 0, 300, 300)
 		this.createCircle(this.opt.outCircle.radius);//9个大圆
 		for (let i = 0; i < this.crossCircleList.length; i++) {
 			var index = this.circleList[this.crossCircleList[i]];
@@ -161,7 +160,6 @@
 	}
 	Lock.prototype.clear = function () {
 		var self = this;
-		//self.context.clearRect(0, 0, 300, 300)
 		self.circleList = [];
 		self.crossCircleList = [];
 		self.result = true;
